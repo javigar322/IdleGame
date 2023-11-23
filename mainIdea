@@ -1,0 +1,76 @@
+Mecánicas Únicas:
+Viaje Interdimensional: Los jugadores pueden abrir portales interdimensionales para explorar diferentes galaxias, cada una con mecánicas y desafíos únicos.
+
+Progresión No Lineal:
+Caminos de Exploración: Los jugadores pueden elegir entre convertirse en conquistadores espaciales, comerciantes galácticos o exploradores interdimensionales, cada uno con su propia línea de progresión.
+
+Historia Inmersiva:
+Era de las Maravillas: Una narrativa que explora la historia de una antigua civilización alienígena y desbloquea secretos cósmicos a medida que los jugadores avanzan.
+
+Interconexión de Sistemas:
+Economía Galáctica: Las decisiones económicas afectan a la estabilidad de las galaxias, y la conquista de una galaxia puede desencadenar eventos que afecten a otras áreas del juego.
+
+Eventos Dinámicos:
+Invasiones Extraterrestres: Periódicamente, las galaxias pueden ser invadidas por fuerzas alienígenas, desafiando a los jugadores a colaborar para defender sus territorios.
+
+Personalización Profunda:
+Naves Personalizables: Los jugadores pueden personalizar sus naves con diferentes módulos, pinturas y tecnologías, afectando tanto la apariencia como el rendimiento.
+
+Colaboración o Competencia:
+Alianzas Galácticas: Los jugadores pueden unirse a alianzas para comerciar y colaborar en la defensa contra amenazas intergalácticas, o competir en eventos especiales para obtener recompensas únicas.
+
+Recompensas Creativas:
+Descubrimiento de Reliquias: En lugar de obtener simplemente más recursos, los jugadores son recompensados con reliquias que desbloquean eventos especiales, como la aparición de mundos secretos.
+
+Actualizaciones Constantes:
+Nuevas Galaxias: Se lanzan actualizaciones que introducen regularmente nuevas galaxias, cada una con desafíos y eventos únicos.
+
+Feedback Activo:
+Foro Galáctico: Un foro en el juego donde los jugadores pueden compartir ideas y votar por nuevas características, dando a los desarrolladores una guía directa de la comunidad.
+
+galaxy-game
+├── src
+│   ├── app
+│   │   ├── core
+│   │   │   └── player.service.ts
+│   │   ├── features
+│   │   │   ├── exploration
+│   │   │   │   └── exploration.component.ts|html|css|spec.ts
+│   │   │   ├── economy
+│   │   │   │   └── economy.component.ts|html|css|spec.ts
+│   │   │   └── customization
+│   │   │       └── customization.component.ts|html|css|spec.ts
+│   │   ├── shared
+│   │   │   └── galaxy-card.component.ts|html|css|spec.ts
+│   │   │   └── intergalactic-market.component.ts|html|css|spec.ts
+│   │   │   └── alliance.component.ts|html|css|spec.ts
+│   │   └── app.component.ts|html|css|spec.ts
+│   └── main.ts
+│   └── index.html
+│   └── ...
+└── node_modules/...
+└── ...
+
+src: El directorio principal de tu código fuente.
+
+app: La parte principal de tu aplicación.
+
+core: Contiene servicios esenciales.
+player.service.ts: Servicio para gestionar el estado del jugador.
+features: Módulos principales del juego.
+exploration: Módulo de exploración.
+exploration.component.ts|html|css|spec.ts: Componente para la exploración de nuevas galaxias.
+economy: Módulo de economía.
+economy.component.ts|html|css|spec.ts: Componente para gestionar la economía galáctica.
+customization: Módulo de personalización.
+customization.component.ts|html|css|spec.ts: Componente para personalizar naves y equipos.
+shared: Componentes compartidos en toda la aplicación.
+galaxy-card.component.ts|html|css|spec.ts: Componente para mostrar información de una galaxia.
+intergalactic-market.component.ts|html|css|spec.ts: Componente para mostrar el mercado intergaláctico.
+alliance.component.ts|html|css|spec.ts: Componente para la gestión de alianzas.
+app.component.ts|html|css|spec.ts: Componente principal de la aplicación.
+main.ts: Punto de entrada principal para tu aplicación Angular.
+
+index.html: Archivo principal de la aplicación web.
+
+node_modules: Dependencias de tu proyecto.
