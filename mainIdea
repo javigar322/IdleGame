@@ -44,6 +44,8 @@ galaxy-game
 │   │   │   └── galaxy-card.component.ts|html|css|spec.ts
 │   │   │   └── intergalactic-market.component.ts|html|css|spec.ts
 │   │   │   └── alliance.component.ts|html|css|spec.ts
+│   │   │   └── material.module.ts
+│   │   │   └── sidenav.component.ts|html|css|spec.ts
 │   │   └── app.component.ts|html|css|spec.ts
 │   └── main.ts
 │   └── index.html

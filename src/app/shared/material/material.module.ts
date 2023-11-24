@@ -7,6 +7,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -19,6 +23,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
   exports: [
     MatCardModule,
@@ -28,6 +36,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
 })
 export class MaterialModule {}

@@ -1,50 +1,7 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.example-card {
-  width: 80%;
-  max-width: 400px; /* Limita el ancho máximo para evitar que la tarjeta se vuelva demasiado ancha */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 20px; /* Añade un poco de espacio entre la tarjeta y el borde de la pantalla */
-}
-
-.example-card-header {
-  background-color: #4caf50;
-  color: white;
-  padding: 16px; /* Aumenta el espacio en el encabezado */
-  text-align: center;
-}
-
-.mat-card-content {
-  text-align: center;
-  padding: 16px; /* Aumenta el espacio en el contenido */
-}
-
-.example-card-level {
-  margin-bottom: 0;
-}
-
-.example-card-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-}
-
-.example-form-field {
+// Estilos para la Card de Material Angular
+.carta {
+  flex-grow: 1;
+  margin: 16px;
+  box-sizing: border-box;
   width: 70%;
-}
-
-.example-input {
-  width: calc(100% - 32px);
-}
-
-.example-clear-button {
-  margin-left: -8px;
 }
