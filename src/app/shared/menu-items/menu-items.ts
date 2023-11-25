@@ -8,7 +8,14 @@ export interface Menu {
 }
 
 const MENUITEMS: Menu[] = [
-  { state: 'card', name: 'Galaxy-card', type: 'link', icon: 'web' },
+  { state: 'card', name: 'Galaxy-card', type: 'link', icon: 'home' },
+  { state: 'market', name: 'Market', type: 'link', icon: 'token' },
+  {
+    state: 'alliance',
+    name: 'Alliance',
+    type: 'link',
+    icon: 'key',
+  },
 ];
 
 @Injectable()
