@@ -5,6 +5,8 @@ import { GalaxyCardComponent } from './shared/galaxy-card/galaxy-card.component'
 import { MaterialModule } from './shared/material.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { SharedModule } from './shared/shared.module';
+import { FullComponent } from './shared/full/full.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,8 @@ import { HeaderComponent } from './shared/header/header.component';
     GalaxyCardComponent,
     SidenavComponent,
     HeaderComponent,
+    SharedModule,
+    FullComponent,
   ],
 })
 export class AppComponent {}

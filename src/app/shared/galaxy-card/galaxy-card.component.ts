@@ -13,6 +13,10 @@ import { MaterialModule } from '../material.module';
   styleUrl: './galaxy-card.component.scss',
 })
 export class GalaxyCardComponent implements OnInit {
+  color = 'primary';
+  mode: any = 'determinate';
+  value = 50;
+  bufferValue = 75;
   public player: Player;
   public name = '';
 

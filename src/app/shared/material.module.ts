@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from './shared.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import { SharedModule } from './shared.module';
     MatMenuModule,
     MatListModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MatCardModule,
@@ -46,6 +48,7 @@ import { SharedModule } from './shared.module';
     MatMenuModule,
     MatListModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class MaterialModule {}
