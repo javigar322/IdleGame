@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlayerService } from '../../core/player.service';
 import { Player } from '../../core/models/Player';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../material.module';
 
 @Component({
   selector: 'app-galaxy-card',

@@ -29,3 +29,16 @@
     </button>
   </mat-menu>
 </div>
+<mat-nav-list appAccordion>
+  @for (menuItem of menuItems.getMenuItem(); track $index) {
+  <mat-list-item appAccordionLink routerLinkActive="selected">
+    @if (menuItem.type === 'link') {
+    <a class="" appAccordionToggle [routerLink]="['/', menuItem.state]">
+      <mat-icon>{{ menuItem.icon }}</mat-icon>
+      <span>{{ menuItem.name }}</span>
+      <span fxFlex></span>
+    </a>
+    }
+  </mat-list-item>
+  }
+</mat-nav-list>

@@ -11,6 +11,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [],
@@ -27,6 +29,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSlideToggleModule,
     MatToolbarModule,
     MatMenuModule,
+    MatListModule,
+    SharedModule,
   ],
   exports: [
     MatCardModule,
@@ -40,6 +44,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSlideToggleModule,
     MatToolbarModule,
     MatMenuModule,
+    MatListModule,
+    SharedModule,
   ],
 })
 export class MaterialModule {}
