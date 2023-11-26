@@ -2,17 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { MenuItems } from '../menu-items/menu-items';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { PlayerService } from '../../core/player.service';
 import { Player } from '../../core/models/Player';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [CommonModule, MaterialModule, RouterLink],
   templateUrl: './sidenav.component.html',
+  imports: [
+    CommonModule,
+    MaterialModule,
+    RouterLink,
+    MenuComponent,
+    RouterModule,
+  ],
 })
 export class SidenavComponent implements OnInit {
   player: Player;
@@ -20,8 +25,7 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     public menuItems: MenuItems,
-    public playerService: PlayerService,
-    private dialogService: MatDialog
+    public playerService: PlayerService
   ) {
     this.player = {
       level: 1,
@@ -32,19 +36,6 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
     this.playerService.getPlayer().subscribe((resp) => {
       this.player = resp;
-    });
-  }
-  openDialog(): void {
-    let dialog = this.dialogService.open(DialogComponent, {
-      width: '300px',
-      height: '500px',
-    });
-
-    dialog.afterClosed().subscribe((resp) => {
-      console.log(resp);
-      if (resp !== '' && resp !== undefined) {
-        this.playerService.changeUsername(resp);
-      }
     });
   }
 }
