@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Player } from './models/Player';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlayerService {
-  player: any;
-  private player$: Subject<Player> = new Subject();
+  private playerSubject: BehaviorSubject<Player> = new BehaviorSubject<Player>(
+    {} as Player,
+  );
+
+  private player: Player;
 
   constructor() {
+    // Puedes cargar el jugador desde algún servicio o asignar valores por defecto
     this.player = {
       level: 1,
       username: 'usuario',
       experience: 0,
     };
+    this.emitPlayer();
   }
 
   addExperience(exp: number) {
@@ -32,10 +37,10 @@ export class PlayerService {
   }
 
   private emitPlayer() {
-    this.player$.next({ ...this.player });
+    this.playerSubject.next({ ...this.player });
   }
 
   getPlayer(): Observable<Player> {
-    return this.player$.asObservable();
+    return this.playerSubject.asObservable();
   }
 }

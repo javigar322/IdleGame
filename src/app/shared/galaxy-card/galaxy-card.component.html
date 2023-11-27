@@ -1,19 +1,21 @@
-<mat-card class="example-card">
-  <mat-card-content>
-    <h2 class="example-h2">Nivel {{ player.level }} / 100</h2>
+@if (player) {
+  <mat-card class="example-card">
+    <mat-card-content>
+      <h2 class="example-h2">Nivel {{ player.level }} / 100</h2>
 
-    <section class="example-section">
-      <mat-progress-bar
-        class="example-margin"
-        [color]="color"
-        [mode]="mode"
-        [value]="value"
-        [bufferValue]="bufferValue"
-      >
-      </mat-progress-bar>
-    </section>
-  </mat-card-content>
-</mat-card>
+      <section class="example-section">
+        <mat-progress-bar
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value"
+          [bufferValue]="bufferValue"
+        >
+        </mat-progress-bar>
+      </section>
+    </mat-card-content>
+  </mat-card>
+}
 <mat-card>
   <mat-card-content>
     <button (click)="addExperience()">Añadir experiencia al usuario</button>

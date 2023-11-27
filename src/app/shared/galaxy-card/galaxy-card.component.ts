@@ -22,22 +22,23 @@ export class GalaxyCardComponent implements OnInit {
   mode: any = 'determinate';
   value = 0;
   bufferValue = 75;
-  public player: Player;
+  public player: any;
   public name = '';
 
   constructor(private playerService: PlayerService) {
-    this.player = {
-      level: 1,
-      username: 'usuario',
-      experience: 0,
-    };
+    this.getPlayer();
   }
   ngOnInit(): void {
+    this.getPlayer();
+  }
+
+  getPlayer(): void {
     this.playerService.getPlayer().subscribe((resp: Player) => {
       this.player = resp;
       this.value = this.player.experience;
     });
   }
+
   cambiar(name: string): void {
     this.playerService.changeUsername(name);
   }
