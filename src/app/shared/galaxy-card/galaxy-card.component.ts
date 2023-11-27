@@ -38,4 +38,7 @@ export class GalaxyCardComponent implements OnInit {
   cambiar(name: string): void {
     this.playerService.changeUsername(name);
   }
+  addExperience() {
+    this.playerService.addExperience(50);
+  }
 }
