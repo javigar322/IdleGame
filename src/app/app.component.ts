@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { GalaxyCardComponent } from './shared/galaxy-card/galaxy-card.component';
@@ -7,6 +7,8 @@ import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { FullComponent } from './shared/full/full.component';
+import { PlayerService } from './core/player.service';
+import { Player } from './core/models/Player';
 
 @Component({
   selector: 'app-root',

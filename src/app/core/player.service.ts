@@ -6,8 +6,8 @@ import { Player } from './models/Player';
   providedIn: 'root',
 })
 export class PlayerService {
-  player: Player = {} as Player;
-  private player$: Subject<Player>;
+  player: any;
+  private player$: Subject<Player> = new Subject();
 
   constructor() {
     this.player = {
@@ -15,7 +15,6 @@ export class PlayerService {
       username: 'usuario',
       experience: 0,
     };
-    this.player$ = new Subject();
   }
 
   addExperience(exp: number) {
@@ -24,12 +23,16 @@ export class PlayerService {
       this.player.level += 1;
       this.player.experience = 0;
     }
-    this.player$.next(this.player);
+    this.emitPlayer();
   }
 
   changeUsername(user: string) {
     this.player.username = user;
-    this.player$.next(this.player);
+    this.emitPlayer();
+  }
+
+  private emitPlayer() {
+    this.player$.next({ ...this.player });
   }
 
   getPlayer(): Observable<Player> {

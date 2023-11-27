@@ -1,6 +1,6 @@
 <mat-card class="example-card">
   <mat-card-content>
-    <h2 class="example-h2">Result</h2>
+    <h2 class="example-h2">Nivel {{ player.level }} / 100</h2>
 
     <section class="example-section">
       <mat-progress-bar
@@ -15,7 +15,7 @@
   </mat-card-content>
 </mat-card>
 <mat-card>
-  <mat-card-content
-    ><input type="button" (click)="addExperience()"
-  /></mat-card-content>
+  <mat-card-content>
+    <button (click)="addExperience()">Añadir experiencia al usuario</button>
+  </mat-card-content>
 </mat-card>

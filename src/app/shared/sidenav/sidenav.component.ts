@@ -25,11 +25,11 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     public menuItems: MenuItems,
-    public playerService: PlayerService
+    public playerService: PlayerService,
   ) {
     this.player = {
       level: 1,
-      username: 'javier',
+      username: 'usuario',
       experience: 0,
     };
   }
