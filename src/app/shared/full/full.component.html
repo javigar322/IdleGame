@@ -1,11 +1,14 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened class="dark-sidebar pl-xs">
+  <mat-drawer mode="side" [opened]="isSidebarOpen" class="dark-sidebar pl-xs">
     <app-sidenav></app-sidenav>
   </mat-drawer>
 
   <mat-drawer-content>
     <div class="page-wrapper">
       <div class="page-content">
+        <button mat-icon-button (click)="toggleSidebar()">
+          <mat-icon>{{ isSidebarOpen ? "chevron_left" : "menu" }}</mat-icon>
+        </button>
         <router-outlet></router-outlet>
       </div>
     </div>

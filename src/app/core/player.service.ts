@@ -18,7 +18,7 @@ export class PlayerService {
       level: 1,
       username: 'usuario',
       experience: 0,
-      credits: 100,
+      credits: 1000,
     };
     this.emitPlayer();
   }

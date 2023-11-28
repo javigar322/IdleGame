@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { GalaxyCardComponent } from '../galaxy-card/galaxy-card.component';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { HeaderComponent } from '../header/header.component';
-import { PlayerService } from '../../core/player.service';
-import { Player } from '../../core/models/Player';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-full',
@@ -22,24 +21,27 @@ import { Player } from '../../core/models/Player';
   templateUrl: './full.component.html',
   styleUrl: './full.component.scss',
 })
-export class FullComponent {
-  public player: any;
+export class FullComponent implements OnDestroy, OnInit {
+  mobileQuery: MediaQueryList;
+  isSidebarOpen = true;
 
-  constructor(private playerService: PlayerService) {}
-  ngOnInit(): void {
-    this.getPlayer();
+  private _mobileQueryListener: () => void;
+
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
+  ) {
+    this.mobileQuery = media.matchMedia('(max-width:600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addEventListener('change', this._mobileQueryListener);
+  }
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeEventListener('change', this._mobileQueryListener);
   }
 
-  getPlayer(): void {
-    this.playerService.getPlayer().subscribe((resp: Player) => {
-      this.player = resp;
-    });
-  }
-
-  cambiar(name: string): void {
-    this.playerService.changeUsername(name);
-  }
-  addExperience() {
-    this.playerService.addExperience(5);
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }
