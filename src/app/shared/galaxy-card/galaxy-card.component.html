@@ -31,7 +31,13 @@
           <h1>cuesta {{ cardItem.valor }}</h1>
           <h1>genera {{ cardItem.genera }} de credito / segundos</h1>
           @if (!cardItem.comprado) {
-            <button mat-raised-button color="primary" (click)="addExperience()">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="
+                comprarCarta(cardItem.genera, cardItem.valor, cardItem.id)
+              "
+            >
               Añadir experiencia al usuario
             </button>
           } @else {

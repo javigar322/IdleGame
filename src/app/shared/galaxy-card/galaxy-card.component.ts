@@ -44,14 +44,13 @@ export class GalaxyCardComponent implements OnInit {
   addExperience() {
     this.playerService.addExperience(5);
   }
-  buyGalaxy1() {
-    setInterval(() => {
-      this.playerService.addCredits(1);
-    }, 1000);
-  }
-  buyGalaxy2() {
-    setInterval(() => {
-      this.playerService.addCredits(2);
-    }, 1000);
+  comprarCarta(creditos: number, valor: number, id: number): void {
+    if (this.player.credits >= valor) {
+      setInterval(() => {
+        this.playerService.addCredits(creditos);
+      }, 1000);
+      this.playerService.buyObject(valor);
+      this.cardItems.getCardItem()[id].comprado = true;
+    }
   }
 }
