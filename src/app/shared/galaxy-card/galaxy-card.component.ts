@@ -1,21 +1,17 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerService } from '../../core/player.service';
 import { Player } from '../../core/models/Player';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
+import { CardItems } from '../menu-items/card-items';
 
 @Component({
   selector: 'app-galaxy-card',
   standalone: true,
   imports: [CommonModule, FormsModule, MaterialModule],
   templateUrl: './galaxy-card.component.html',
-  styleUrl: './galaxy-card.component.scss',
+  providers: [CardItems],
 })
 export class GalaxyCardComponent implements OnInit {
   color = 'primary';
@@ -25,7 +21,10 @@ export class GalaxyCardComponent implements OnInit {
   public player: any;
   public name = '';
 
-  constructor(private playerService: PlayerService) {
+  constructor(
+    private playerService: PlayerService,
+    public cardItems: CardItems,
+  ) {
     this.getPlayer();
   }
   ngOnInit(): void {
@@ -44,5 +43,15 @@ export class GalaxyCardComponent implements OnInit {
   }
   addExperience() {
     this.playerService.addExperience(5);
+  }
+  buyGalaxy1() {
+    setInterval(() => {
+      this.playerService.addCredits(1);
+    }, 1000);
+  }
+  buyGalaxy2() {
+    setInterval(() => {
+      this.playerService.addCredits(2);
+    }, 1000);
   }
 }

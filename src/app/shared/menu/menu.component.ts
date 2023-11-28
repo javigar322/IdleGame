@@ -13,19 +13,13 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './menu.component.html',
 })
 export class MenuComponent {
-  player: Player;
+  player: any;
   name = '';
 
   constructor(
     public playerService: PlayerService,
-    private dialogService: MatDialog
-  ) {
-    this.player = {
-      level: 1,
-      username: 'javier',
-      experience: 0,
-    };
-  }
+    private dialogService: MatDialog,
+  ) {}
   openDialog(): void {
     let dialog = this.dialogService.open(DialogComponent, {
       width: '250px',

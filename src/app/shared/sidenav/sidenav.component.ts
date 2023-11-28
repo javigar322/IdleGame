@@ -20,19 +20,14 @@ import { MenuComponent } from '../menu/menu.component';
   ],
 })
 export class SidenavComponent implements OnInit {
-  player: Player;
+  player: any;
   name = '';
 
   constructor(
     public menuItems: MenuItems,
     public playerService: PlayerService,
-  ) {
-    this.player = {
-      level: 1,
-      username: 'usuario',
-      experience: 0,
-    };
-  }
+  ) {}
+
   ngOnInit(): void {
     this.playerService.getPlayer().subscribe((resp) => {
       this.player = resp;

@@ -2,32 +2,17 @@
 <div
   class="user-profile"
   style="background: url(assets/images/background/user-info.jpg) no-repeat"
->
-  <!-- user profile img -->
-  <div class="profile-img">
-    <img src="assets/images/users/profile.png" alt="user" />
-  </div>
-  <!-- user profile texto -->
-  <div class="profile-text">
-    <a [matMenuTriggerFor]="sdprofile">
-      <i>{{ player.username }}</i>
-    </a>
-  </div>
-  <!-- desplegable con el menu del perfil -->
-  <mat-menu #sdprofile="matMenu" class="mymegamenu">
-    <app-menu></app-menu>
-  </mat-menu>
-</div>
+></div>
 <mat-nav-list appAccordion>
   @for (menuItem of menuItems.getMenuItem(); track $index) {
-  <mat-list-item appAccordionLink routerLinkActive="selected">
-    @if (menuItem.type === 'link') {
-    <a class="" appAccordionToggle [routerLink]="['/', menuItem.state]">
-      <mat-icon>{{ menuItem.icon }}</mat-icon>
-      <span>{{ menuItem.name }}</span>
-      <span fxFlex></span>
-    </a>
-    }
-  </mat-list-item>
+    <mat-list-item appAccordionLink routerLinkActive="selected">
+      @if (menuItem.type === "link") {
+        <a class="" appAccordionToggle [routerLink]="['/', menuItem.state]">
+          <mat-icon>{{ menuItem.icon }}</mat-icon>
+          <span>{{ menuItem.name }}</span>
+          <span fxFlex></span>
+        </a>
+      }
+    </mat-list-item>
   }
 </mat-nav-list>

@@ -20,6 +20,7 @@ import { Player } from '../../core/models/Player';
     HeaderComponent,
   ],
   templateUrl: './full.component.html',
+  styleUrl: './full.component.scss',
 })
 export class FullComponent {
   public player: any;

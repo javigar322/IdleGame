@@ -1,7 +1,12 @@
 @if (player) {
   <mat-card class="example-card">
     <mat-card-content>
-      <h2 class="example-h2">Nivel {{ player.level }} / 100</h2>
+      <section class="row">
+        <h2 class="example-h2 col-lg-6">{{ player.username }}</h2>
+        <h2 class="col-lg-6">
+          Nv.{{ player.level }} -- Creditos : {{ player.credits }}
+        </h2>
+      </section>
 
       <section class="example-section">
         <mat-progress-bar
@@ -13,11 +18,34 @@
         >
         </mat-progress-bar>
       </section>
+      <h4>{{ player.experience }} / 100</h4>
     </mat-card-content>
   </mat-card>
 }
-<mat-card>
-  <mat-card-content>
-    <button (click)="addExperience()">Añadir experiencia al usuario</button>
-  </mat-card-content>
-</mat-card>
+<div class="row">
+  @for (cardItem of cardItems.getCardItem(); track $index) {
+    <div class="col-lg-3 col-sm-12">
+      <mat-card>
+        <mat-card-content>
+          <h1>{{ cardItem.name }}</h1>
+          <h1>cuesta {{ cardItem.valor }}</h1>
+          <h1>genera {{ cardItem.genera }} de credito / segundos</h1>
+          @if (!cardItem.comprado) {
+            <button mat-raised-button color="primary" (click)="addExperience()">
+              Añadir experiencia al usuario
+            </button>
+          } @else {
+            <mat-progress-bar
+              class="example-margin"
+              color="primary"
+              mode="indeterminate"
+              [value]="value"
+              bufferValue="75"
+            >
+            </mat-progress-bar>
+          }
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+</div>

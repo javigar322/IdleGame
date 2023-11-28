@@ -12,16 +12,18 @@ export class PlayerService {
 
   private player: Player;
 
+  // genera un jugador inicial
   constructor() {
-    // Puedes cargar el jugador desde algún servicio o asignar valores por defecto
     this.player = {
       level: 1,
       username: 'usuario',
       experience: 0,
+      credits: 100,
     };
     this.emitPlayer();
   }
 
+  // añade experiencia al jugador
   addExperience(exp: number) {
     this.player.experience += exp;
     if (this.player.experience > 100) {
@@ -31,16 +33,30 @@ export class PlayerService {
     this.emitPlayer();
   }
 
+  // cambia el nombre del jugador
   changeUsername(user: string) {
     this.player.username = user;
     this.emitPlayer();
   }
 
+  // actualiza al jugador
   private emitPlayer() {
     this.playerSubject.next({ ...this.player });
   }
 
+  // obtiene la informacion del jugador
   getPlayer(): Observable<Player> {
     return this.playerSubject.asObservable();
+  }
+
+  // metodo que añade creditos al jugador
+  addCredits(creditos: number): void {
+    this.player.credits += creditos;
+    this.emitPlayer();
+  }
+
+  buyObject(creditos: number): void {
+    this.player.credits -= creditos;
+    this.emitPlayer();
   }
 }
