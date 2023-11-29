@@ -11,6 +11,7 @@ import { CardItems } from '../menu-items/card-items';
   standalone: true,
   imports: [CommonModule, FormsModule, MaterialModule],
   templateUrl: './galaxy-card.component.html',
+  styleUrl: './galaxy-card.component.scss',
   providers: [CardItems],
 })
 export class GalaxyCardComponent implements OnInit {
@@ -43,6 +44,9 @@ export class GalaxyCardComponent implements OnInit {
   }
   addExperience() {
     this.playerService.addExperience(5);
+  }
+  addCredit() {
+    this.playerService.addCredits(5);
   }
   comprarCarta(creditos: number, valor: number, id: number): void {
     if (this.player.credits >= valor) {

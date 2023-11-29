@@ -29,6 +29,7 @@ export class PlayerService {
     if (this.player.experience > 100) {
       this.player.level += 1;
       this.player.experience = 0;
+      this.addCredits(1000);
     }
     this.emitPlayer();
   }

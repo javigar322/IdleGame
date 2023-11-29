@@ -36,7 +36,7 @@ html {
 }
 
 html .page-wrapper {
-  height: calc(100vh - 64px);
+  height: 100vh;
 
   .page-content {
     padding: 30px 15px;
@@ -114,10 +114,11 @@ code {
   margin-right: 5px;
   // color: $white;
 }
-.mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent{
+.mat-mdc-fab.mat-accent,
+.mat-mdc-mini-fab.mat-accent {
   color: $white;
 }
-.mat-mdc-tab-header{
+.mat-mdc-tab-header {
   border-bottom: 1px solid $border;
 }
 
@@ -145,7 +146,6 @@ html body {
   }
 
   .jc-c {
-
     justify-content: center;
   }
 

@@ -21,34 +21,56 @@
       <h4>{{ player.experience }} / 100</h4>
     </mat-card-content>
   </mat-card>
+  <mat-card>
+    <mat-card-content>
+      <div class="row">
+        <button
+          mat-raised-button
+          class="col-lg-3"
+          color="primary"
+          (click)="addExperience()"
+        >
+          añadir experiencia
+        </button>
+        <div class="col-lg-6"></div>
+        <button
+          mat-raised-button
+          class="col-lg-3"
+          color="primary"
+          (click)="addCredit()"
+        >
+          añadir creditos
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
 }
 <div class="row">
   @for (cardItem of cardItems.getCardItem(); track $index) {
     <div class="col-lg-3 col-sm-12">
-      <mat-card>
+      <mat-card
+        [class.pulse]="cardItem.comprado"
+        (click)="comprarCarta(cardItem.genera, cardItem.valor, cardItem.id)"
+      >
+        <img
+          mat-card-image
+          [src]="cardItem.imageURL"
+          alt="Imagen de la galaxia"
+        />
         <mat-card-content>
-          <h1>{{ cardItem.name }}</h1>
-          <h1>cuesta {{ cardItem.valor }}</h1>
-          <h1>genera {{ cardItem.genera }} de credito / segundos</h1>
-          @if (!cardItem.comprado) {
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="
-                comprarCarta(cardItem.genera, cardItem.valor, cardItem.id)
-              "
-            >
-              Comprar galaxia
-            </button>
-          } @else {
+          <h2 class="card-title">{{ cardItem.name }}</h2>
+          <p class="card-text">Costo: {{ cardItem.valor }}</p>
+          <p class="card-text">
+            Genera: {{ cardItem.genera }} de crédito por segundo
+          </p>
+          @if (cardItem.comprado) {
             <mat-progress-bar
               class="example-margin"
               color="primary"
               mode="indeterminate"
               [value]="value"
               bufferValue="75"
-            >
-            </mat-progress-bar>
+            ></mat-progress-bar>
           }
         </mat-card-content>
       </mat-card>

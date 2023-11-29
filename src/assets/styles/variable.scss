@@ -1,18 +1,11 @@
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
 // Variables
-
 @use "@angular/material" as mat;
 @include mat.core();
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 
-$bodyfont: 'Poppins', sans-serif;
-$headingfont: 'Poppins', sans-serif;
+$bodyfont: "Poppins", sans-serif;
+$headingfont: "Poppins", sans-serif;
 
 $mat-primary: (
   100: #ebf9fa,
@@ -35,7 +28,7 @@ $mat-secondary: (
   ),
 );
 $mat-warn: (
-  100: FDEDE8,
+  100: #fdede8,
   500: #e91e63,
   700: #e91e63,
   contrast: (
@@ -51,13 +44,7 @@ $primary: mat.define-palette($mat-primary, 500);
 $accent: mat.define-palette($mat-secondary, 500);
 $warn: mat.define-palette($mat-warn, 500);
 
-
-// $theme: mat-light-theme($primary, $accent, $warn);
-
-// $background: map-get($theme, background);
-// $foreground: map-get($theme, foreground);
-
-$cyantheme: mat.define-light-theme(
+$cyantheme: mat.define-dark-theme(
   (
     color: (
       primary: $primary,
@@ -73,42 +60,38 @@ $cyantheme: mat.define-light-theme(
 
 @include mat.all-component-themes($cyantheme);
 
-// $custom-typography: mat-typography-config(
-//   $font-family: 'Poppins, sans-serif'
-// );
-
-// Override the typography in the core CSS.
-// @include mat-core($custom-typography);
-
-// Default Theme
-//@include angular-material-theme($theme);
-
 // Dark Theme
 
 /*Theme Colors*/
 
-$topbar: #2196f3;
-$sidebar: #fff;
-$sidebar-white: #e5edef;
-$sidebar-alt: #f2f6f8;
-$bodycolor: #eef5f9;
-$headingtext: #455a64;
-$bodytext: #67757c;
-$sidebar-text: #607d8b;
-$sidebar-icons: #99abb4;
+$topbar: #1e88e5;
+$sidebar: #1e88e5;
+$sidebar-white: #26c6da;
+$sidebar-alt: #fff5f2;
+$bodycolor: #fff5f2;
+$headingtext: #1e88e5;
+$bodytext: #26c6da;
+$sidebar-text: #26c6da;
+$sidebar-icons: #26c6da;
+
+// Morado oscuro para cartas y otros componentes
+$card-color: #e91e63;
+
+// Morado claro para el fondo general
+$general-background: #1e88e5;
 
 $font-16: 16px;
 
-$light-text: #a6b7bf;
+$light-text: #1e88e5;
 $themecolor: #1e88e5;
 $themecolor-alt: #26c6da;
-$themecolor-dark: #028ee1;
+$themecolor-dark: #1e88e5;
 
 /*bootstrap Color*/
-$danger: #fc4b6c;
+$danger: #e91e63;
 $success: #26c6da;
 $warning: #ffb22b;
-$primary: #7460ee;
+$primary: #1e88e5;
 $info: #1e88e5;
 $inverse: #2f3d4a;
 $muted: #99abb4;
