@@ -49,6 +49,7 @@
   @for (cardItem of cardItems.getCardItem(); track $index) {
     <div class="col-lg-3 col-sm-12">
       <mat-card
+        [class.carta]="!cardItem.comprado"
         [class.pulse]="cardItem.comprado"
         (click)="comprarCarta(cardItem.genera, cardItem.valor, cardItem.id)"
       >

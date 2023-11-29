@@ -8,10 +8,9 @@ describe('IntergalacticMarketComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IntergalacticMarketComponent]
-    })
-    .compileComponents();
-    
+      imports: [IntergalacticMarketComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(IntergalacticMarketComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

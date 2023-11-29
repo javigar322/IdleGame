@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { GalaxyCardComponent } from './shared/galaxy-card/galaxy-card.component';
+import { GalaxyCardComponent } from './pages/galaxy-card/galaxy-card.component';
 import { MaterialModule } from './shared/material.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { HeaderComponent } from './shared/header/header.component';

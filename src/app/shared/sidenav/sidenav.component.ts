@@ -4,13 +4,14 @@ import { MaterialModule } from '../material.module';
 import { MenuItems } from '../menu-items/menu-items';
 import { RouterLink, RouterModule } from '@angular/router';
 import { PlayerService } from '../../core/player.service';
-import { Player } from '../../core/models/Player';
 import { MenuComponent } from '../menu/menu.component';
+import { BuffItems } from '../../pages/alliance/buff-items';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
   templateUrl: './sidenav.component.html',
+  styleUrl: './sidenav.component.scss',
   imports: [
     CommonModule,
     MaterialModule,

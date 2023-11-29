@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-alliance',
+  selector: 'app-not-found',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './alliance.component.html',
-  styleUrl: './alliance.component.scss'
+  templateUrl: './not-found.component.html',
 })
-export class AllianceComponent {
-
-}
+export class NotFoundComponent {}

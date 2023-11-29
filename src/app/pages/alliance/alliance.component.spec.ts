@@ -8,10 +8,9 @@ describe('AllianceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AllianceComponent]
-    })
-    .compileComponents();
-    
+      imports: [AllianceComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AllianceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

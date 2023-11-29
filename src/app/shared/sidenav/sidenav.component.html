@@ -7,11 +7,16 @@
   @for (menuItem of menuItems.getMenuItem(); track $index) {
     <mat-list-item appAccordionLink routerLinkActive="selected">
       @if (menuItem.type === "link") {
-        <a class="" appAccordionToggle [routerLink]="['/', menuItem.state]">
+        <a appAccordionToggle [routerLink]="['/', menuItem.state]">
           <mat-icon>{{ menuItem.icon }}</mat-icon>
           <span>{{ menuItem.name }}</span>
           <span fxFlex></span>
         </a>
+      } @else if (menuItem.type === "space") {
+        <div class="noClick">
+          <span>{{ menuItem.name }}</span>
+          <hr />
+        </div>
       }
     </mat-list-item>
   }

@@ -1,0 +1,33 @@
+<div class="example-container">
+  <h2>Buffos galaxia</h2>
+
+  <div
+    cdkDropList
+    #buffList="cdkDropList"
+    [cdkDropListData]="buffitems.getBuffItem()"
+    [cdkDropListConnectedTo]="[actualBuffList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    @for (item of buffitems.getBuffItem(); track item) {
+      <div class="example-box" cdkDrag>{{ item.name }}</div>
+    }
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>buffos activos [max : 5]</h2>
+
+  <div
+    cdkDropList
+    #actualBuffList="cdkDropList"
+    [cdkDropListData]="actualBuff"
+    [cdkDropListConnectedTo]="[buffList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    @for (item of actualBuff; track item) {
+      <div class="example-box" cdkDrag>{{ item.name }}</div>
+    }
+  </div>
+</div>
