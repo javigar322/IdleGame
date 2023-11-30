@@ -19,6 +19,7 @@ import { SharedModule } from './shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -40,6 +41,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SharedModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    MatTooltipModule,
   ],
   exports: [
     MatCardModule,
@@ -58,6 +60,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatDialogModule,
     FormsModule,
+    MatTooltipModule,
   ],
 })
 export class MaterialModule {}

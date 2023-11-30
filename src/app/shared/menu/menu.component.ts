@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Player } from '../../core/models/Player';
-import { PlayerService } from '../../core/player.service';
+import { PlayerService } from '../../core/services/player.service';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

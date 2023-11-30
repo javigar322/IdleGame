@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlayerService } from '../../core/player.service';
+import { PlayerService } from '../../core/services/player.service';
 import { Player } from '../../core/models/Player';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../shared/material.module';
-import { CardItems } from '../../shared/menu-items/card-items';
+import { CardItems } from '../../core/models/card-items';
+import { BuffItems } from '../../core/models/buff-items';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-galaxy-card',
   standalone: true,
-  imports: [CommonModule, FormsModule, MaterialModule],
+  imports: [CommonModule, FormsModule, MaterialModule, SharedModule],
   templateUrl: './galaxy-card.component.html',
   styleUrl: './galaxy-card.component.scss',
-  providers: [CardItems],
 })
 export class GalaxyCardComponent implements OnInit {
   color = 'primary';
@@ -25,6 +26,7 @@ export class GalaxyCardComponent implements OnInit {
   constructor(
     private playerService: PlayerService,
     public cardItems: CardItems,
+    public buffitems: BuffItems,
   ) {
     this.getPlayer();
   }
@@ -44,6 +46,18 @@ export class GalaxyCardComponent implements OnInit {
   }
   addExperience() {
     this.playerService.addExperience(5);
+    const buffIdToEnable = 1;
+    const buffToEnable = this.buffitems
+      .getBuffItem()
+      .find((buff) => buff.id === buffIdToEnable);
+
+    if (buffToEnable) {
+      this.buffitems.enableBuffById(buffIdToEnable);
+      console.log('BuffItems:', this.buffitems.getBuffItem());
+      console.log('BuffToEnable:', buffToEnable);
+    } else {
+      console.log(`Buff with ID ${buffIdToEnable} not found.`);
+    }
   }
   addCredit() {
     this.playerService.addCredits(5);

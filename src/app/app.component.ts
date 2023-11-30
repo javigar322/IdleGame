@@ -6,9 +6,10 @@ import { MaterialModule } from './shared/material.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SharedModule } from './shared/shared.module';
-import { FullComponent } from './shared/full/full.component';
-import { PlayerService } from './core/player.service';
+
+import { PlayerService } from './core/services/player.service';
 import { Player } from './core/models/Player';
+import { FullComponent } from './pages/full/full.component';
 
 @Component({
   selector: 'app-root',

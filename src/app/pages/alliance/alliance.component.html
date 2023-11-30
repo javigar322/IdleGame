@@ -7,16 +7,25 @@
     [cdkDropListData]="buffitems.getBuffItem()"
     [cdkDropListConnectedTo]="[actualBuffList]"
     class="example-list"
-    (cdkDropListDropped)="drop($event)"
+    (cdkDropListDropped)="drop($event, 1)"
   >
     @for (item of buffitems.getBuffItem(); track item) {
-      <div class="example-box" cdkDrag>{{ item.name }}</div>
+      <div
+        class="example-box"
+        cdkDrag
+        [cdkDragData]="item"
+        [matTooltip]="item.descripcion"
+        matTooltipPosition="left"
+        [ngClass]="{ disabled: item.disabled }"
+      >
+        {{ item.name }}
+      </div>
     }
   </div>
 </div>
 
 <div class="example-container">
-  <h2>buffos activos [max : 5]</h2>
+  <h2>buffos activos [max : {{ maxSize }}]</h2>
 
   <div
     cdkDropList
@@ -24,10 +33,18 @@
     [cdkDropListData]="actualBuff"
     [cdkDropListConnectedTo]="[buffList]"
     class="example-list"
-    (cdkDropListDropped)="drop($event)"
+    (cdkDropListDropped)="drop($event, 2)"
   >
     @for (item of actualBuff; track item) {
-      <div class="example-box" cdkDrag>{{ item.name }}</div>
+      <div
+        class="example-box"
+        cdkDrag
+        [cdkDragData]="item"
+        [matTooltip]="item.descripcion"
+        matTooltipPosition="right"
+      >
+        {{ item.name }}
+      </div>
     }
   </div>
 </div>

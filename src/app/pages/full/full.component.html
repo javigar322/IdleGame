@@ -6,9 +6,11 @@
   <mat-drawer-content>
     <div class="page-wrapper">
       <div class="page-content">
-        <button mat-icon-button (click)="toggleSidebar()">
-          <mat-icon>{{ isSidebarOpen ? "chevron_left" : "menu" }}</mat-icon>
-        </button>
+        @if (sizeDisplay == "phone") {
+          <button mat-icon-button (click)="toggleSidebar()">
+            <mat-icon>{{ isSidebarOpen ? "chevron_left" : "menu" }}</mat-icon>
+          </button>
+        }
         <router-outlet></router-outlet>
       </div>
     </div>

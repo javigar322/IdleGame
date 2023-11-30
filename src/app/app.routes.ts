@@ -5,6 +5,7 @@ import { AllianceComponent } from './pages/alliance/alliance.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/card', pathMatch: 'full' },
   { path: 'card', component: GalaxyCardComponent },
   { path: 'market', component: IntergalacticMarketComponent },
   { path: 'alliance', component: AllianceComponent },

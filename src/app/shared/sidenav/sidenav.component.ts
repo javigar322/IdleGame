@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
-import { MenuItems } from '../menu-items/menu-items';
+import { MenuItems } from '../../core/models/menu-items';
 import { RouterLink, RouterModule } from '@angular/router';
-import { PlayerService } from '../../core/player.service';
+import { PlayerService } from '../../core/services/player.service';
 import { MenuComponent } from '../menu/menu.component';
-import { BuffItems } from '../../pages/alliance/buff-items';
+import { BuffItems } from '../../core/models/buff-items';
 
 @Component({
   selector: 'app-sidenav',
